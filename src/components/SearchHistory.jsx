@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Style/SearchHistory.css';
 
 const SearchHistory = ({ searchHistory }) => (
   <div className="search-history">

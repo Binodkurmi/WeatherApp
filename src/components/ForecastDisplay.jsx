@@ -1,4 +1,5 @@
 import React from 'react';
+import "../Style/ForecastDisplay.css";
 
 const ForecastDisplay = ({ forecastData }) => {
   if (!forecastData) return null;

@@ -1,0 +1,11 @@
+/* LocationMap.css */
+
+.location-map {
+  margin-top: 20px;
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+  max-width: 100%;
+}

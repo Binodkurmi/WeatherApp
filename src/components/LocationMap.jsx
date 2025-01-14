@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Style/LocationMap.css';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 

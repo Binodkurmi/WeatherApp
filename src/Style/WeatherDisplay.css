@@ -1,29 +1,102 @@
 /* WeatherDisplay.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #74ebd5, #acb6e5);
+  color: #333;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-app {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.weather-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.weather-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex: 1;
+  transition: box-shadow 0.3s ease;
+}
+
+.weather-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #007bff;
+}
+
+.weather-button {
+  padding: 10px 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.weather-button:hover {
+  background: #0056b3;
+}
 
 .weather-display {
-  background-color: #fff;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-in-out;
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
+  animation: slideUp 1s ease-out;
 }
 
-.weather-display h2 {
-  color: #333;
-  margin-bottom: 10px;
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.weather-display .temperature {
-  font-size: 2.5rem;
-  color: #4caf50;
-  margin-bottom: 10px;
+.weather-title {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
 
-.weather-display p {
-  color: #555;
-  margin-bottom: 10px;
+.weather-detail {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.loading,
+.error {
+  font-size: 1.2rem;
+  color: #d9534f;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.5;
+  }
 }
