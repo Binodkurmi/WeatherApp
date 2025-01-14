@@ -1,0 +1,27 @@
+/* ForecastDisplay.css */
+
+.forecast-display {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 1s ease-in-out;
+  width: 100%;
+  max-width: 600px;
+}
+
+.forecast-display .forecast-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.forecast-display .forecast-item .date {
+  color: #333;
+  font-weight: bold;
+}
+
+.forecast-display .forecast-item .temp {
+  color: #4caf50;
+}

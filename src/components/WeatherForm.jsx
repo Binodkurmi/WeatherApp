@@ -5,7 +5,7 @@ const WeatherForm = ({ fetchWeather }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (city.trim() !== '') {
+    if (city.trim()) {
       fetchWeather(city);
       setCity('');
     }
@@ -18,9 +18,11 @@ const WeatherForm = ({ fetchWeather }) => {
         placeholder="Enter city name"
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        required
+        className="weather-input"
       />
-      <button type="submit">Get Weather</button>
+      <button type="submit" className="weather-button">
+        Get Weather
+      </button>
     </form>
   );
 };

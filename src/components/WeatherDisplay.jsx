@@ -1,13 +1,13 @@
 import React from 'react';
 
 const WeatherDisplay = ({ weatherData }) => {
-  if (!weatherData) return <p>Enter a city to see weather data.</p>;
+  if (!weatherData) return null;
 
   const { name, main, weather } = weatherData;
-
   return (
     <div className="weather-display">
       <h2>Weather in {name}</h2>
+      <WeatherIcon icon={weather[0].icon} description={weather[0].description} />
       <p>Temperature: {main.temp}°C</p>
       <p>Humidity: {main.humidity}%</p>
       <p>Condition: {weather[0].description}</p>
