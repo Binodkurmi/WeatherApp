@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Style/ShareButton.css';
 
 const ShareButton = ({ weatherData }) => {
   const handleShare = () => {

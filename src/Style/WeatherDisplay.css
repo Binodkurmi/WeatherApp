@@ -1,102 +1,97 @@
 /* WeatherDisplay.css */
-body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(to bottom right, #74ebd5, #acb6e5);
-  color: #333;
-  text-align: center;
-  min-height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.weather-app {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 20px 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.weather-form {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.weather-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  flex: 1;
-  transition: box-shadow 0.3s ease;
-}
-
-.weather-input:focus {
-  outline: none;
-  box-shadow: 0 0 5px #007bff;
-}
-
-.weather-button {
-  padding: 10px 20px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.weather-button:hover {
-  background: #0056b3;
-}
-
+/* General Styles for Weather Display */
 .weather-display {
-  animation: slideUp 1s ease-out;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  animation: fadeIn 1s ease-out;
 }
 
-@keyframes slideUp {
-  from {
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.weather-title {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
+/* Header Styling */
+.weather-display h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
 }
 
-.weather-detail {
-  font-size: 1.2rem;
-  margin: 5px 0;
+/* Styling for Weather Icon */
+.weather-icon {
+  width: 80px;
+  height: 80px;
+  margin: 10px auto;
 }
 
-.loading,
-.error {
-  font-size: 1.2rem;
-  color: #d9534f;
-  animation: blink 1.5s infinite;
+/* Paragraph Styling */
+.weather-display p {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0;
+  font-family: 'Arial', sans-serif;
+  transition: color 0.3s ease;
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0.5;
+/* Change color of the temperature and condition */
+.weather-display p:nth-child(2) {
+  font-size: 22px;
+  color: #ff6f61;
+  font-weight: bold;
+}
+
+/* Add a hover effect on the Weather Display container */
+.weather-display:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Weather Icon hover effect */
+.weather-display:hover .weather-icon {
+  transform: rotate(360deg);
+  transition: all 0.5s ease;
+}
+
+/* Styling for the description */
+.weather-display p:last-child {
+  font-style: italic;
+  color: #777;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .weather-display {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  .weather-display h2 {
+    font-size: 20px;
+  }
+
+  .weather-display p {
+    font-size: 16px;
   }
 }

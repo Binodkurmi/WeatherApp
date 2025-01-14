@@ -18,7 +18,7 @@ body {
   height: 100vh;
   overflow: hidden; /* Prevents scrolling */
   transition: background-color 0.3s ease-in-out;
-  background: linear-gradient(45deg, #4caf50, #8bc34a);
+  background: linear-gradient(45deg, #4cafaf, #8bc34a);
 }
 
 .container {
