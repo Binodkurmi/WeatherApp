@@ -5,19 +5,8 @@
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically */
-  min-height: 100vh; /* Full viewport height */
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8); /* Light background */
-}
-
-/* Weather Display Styling */
-.weather-display {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 400px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-out;
 }
 
 /* Header Styling */
