@@ -6,19 +6,19 @@ const ForecastDisplay = ({ forecastData }) => {
     return <p>No forecast data available.</p>;
   }
 
-  // Create a set to keep track of the unique dates
+  
   const uniqueDays = [];
   const filteredForecast = forecastData.filter((forecast) => {
-    // Extract date from forecast timestamp
+    
     const forecastDate = new Date(forecast.dt_txt).toLocaleDateString();
 
-    // If this date hasn't been added yet, add it to uniqueDays and keep this entry
+    
     if (!uniqueDays.includes(forecastDate)) {
       uniqueDays.push(forecastDate);
-      return true; // Include this forecast in the filtered list
+      return true; 
     }
-    return false; // Exclude this forecast if the date is already included
-  }).slice(0, 3); // Limit the forecast to 3 days
+    return false; 
+  }).slice(0, 3); 
 
   return (
     <div className="forecast-inline-card">

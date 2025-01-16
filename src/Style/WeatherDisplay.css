@@ -1,12 +1,9 @@
-/* WeatherDisplay.css */
-
-/* Container for centering the WeatherDisplay */
 .weather-display-container {
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
+  justify-content: center; 
+  align-items: center; 
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8); /* Light background */
+  background-color: rgba(255, 255, 255, 0.8); 
 }
 .weather-display h2 {
   font-size: 24px;
@@ -14,22 +11,16 @@
   color: #333;
   margin-bottom: 10px;
 }
-
-/* Weather Icon */
 .weather-display img {
   width: 80px;
   height: 80px;
   margin: 10px auto;
 }
-
-/* Text Styling */
 .weather-display p {
   font-size: 18px;
   color: #555;
   margin: 10px 0;
 }
-
-/* Fade-in animation */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -40,8 +31,6 @@
     transform: translateY(0);
   }
 }
-
-/* Responsive Design */
 @media (max-width: 600px) {
   .weather-display {
     padding: 15px;

@@ -1,20 +1,15 @@
-/* LocationMap.css */
-
-/* Styling the Map Container */
 .leaflet-container {
-  border-radius: 10px; /* Rounded corners for the map */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  border-radius: 10px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  transition: all 0.3s ease; 
 }
 
 .leaflet-container:hover {
-  transform: scale(1.02); /* Slight zoom effect on hover */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect on hover */
+  transform: scale(1.02); 
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); 
 }
-
-/* Popup Styling */
 .leaflet-popup-content {
-  font-size: 14px; /* Slightly larger font size */
+  font-size: 14px; 
   font-weight: bold;
   color: #333;
   background-color: rgba(0, 0, 0, 0.7);
@@ -23,10 +18,8 @@
 }
 
 .leaflet-popup-tip {
-  border-top-color: rgba(0, 0, 0, 0.7); /* Popup triangle color */
+  border-top-color: rgba(0, 0, 0, 0.7); 
 }
-
-/* Additional map container styles */
 .map-container {
   max-width: 100%;
   margin: 20px 0;
