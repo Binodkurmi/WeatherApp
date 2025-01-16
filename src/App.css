@@ -1,6 +1,4 @@
-/* App.css */
-
-/* General Reset */
+/* Basic reset for the app */
 * {
   margin: 0;
   padding: 0;
@@ -9,26 +7,201 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-  margin: 0;
-  padding: 0;
+  background: 
+    url('assets/background.avif'); /* Path to your image */
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  overflow: hidden; /* Prevents scrolling */
-  transition: background-color 0.3s ease-in-out;
-  background: linear-gradient(45deg, #4cafaf, #8bc34a);
+  min-height: 100vh;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+
+/* App container */
+.app {
+  max-width: 800px;
   width: 100%;
-  height: 100%;
   padding: 20px;
-  overflow-y: auto;
-  max-width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  animation: slideDown 0.8s ease-out;
+}
+
+/* Weather Form */
+.weather-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.weather-form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.weather-form button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  background: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.weather-form button:hover {
+  background: #0056b3;
+}
+
+/* Weather Display */
+.weather-display {
+  text-align: center;
+  background: #e7f5ff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.weather-display h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.weather-display p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Forecast Display */
+.forecast-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-card h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+}
+
+.forecast {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.forecast-day {
+  background: #f0f4f8;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+  box-sizing: border-box;
+}
+
+.forecast-day p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+/* Search History */
+.history-card {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.search-history {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-history h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.search-history ul {
+  list-style: none;
+}
+
+.search-history li {
+  padding: 5px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .forecast {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .forecast-day {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .search-history {
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .forecast-day {
+    width: 100%;
+  }
+
+  .weather-form input,
+  .weather-form button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }

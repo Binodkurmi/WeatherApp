@@ -1,27 +1,53 @@
-/* ForecastDisplay.css */
-
-.forecast-display {
-  background-color: #fff;
+/* Style for ForecastDisplay */
+.forecast-inline-card {
+  background: #fff;
   padding: 20px;
-  margin-top: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeInUp 1s ease-in-out;
-  width: 100%;
-  max-width: 600px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  text-align: center;
 }
 
-.forecast-display .forecast-item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.forecast-display .forecast-item .date {
+.forecast-inline-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.6rem;
   color: #333;
-  font-weight: bold;
 }
 
-.forecast-display .forecast-item .temp {
-  color: #4caf50;
+.forecast-inline {
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+}
+
+.forecast-inline-day {
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 10px;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.forecast-inline-day p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.forecast-inline-day p:first-child {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.forecast-inline-day p:last-child {
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .forecast-inline {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

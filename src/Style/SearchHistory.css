@@ -1,76 +1,33 @@
-/* SearchHistory.css */
+/* LocationMap.css */
 
-/* Container for Search History */
-.search-history {
-  position: absolute;
-  top: 20px; /* Distance from the top */
-  right: 10px; /* Distance from the right side */
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 280px; /* Adjust width as needed */
-  transition: all 0.3s ease;
-  z-index: 1000; /* To make sure it stays above other content */
+/* Styling the Map Container */
+.leaflet-container {
+  border-radius: 10px; /* Rounded corners for the map */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
-/* Hover effect for container */
-.search-history:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+.leaflet-container:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect on hover */
 }
 
-/* Title of Search History */
-.search-history h3 {
-  font-size: 20px;
+/* Popup Styling */
+.leaflet-popup-content {
+  font-size: 14px; /* Slightly larger font size */
   font-weight: bold;
   color: #333;
-  margin-bottom: 15px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-bottom: 2px solid #4caf50;
-  padding-bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 8px;
 }
 
-/* List styling */
-.search-history ul {
-  list-style-type: none;
-  padding: 0;
+.leaflet-popup-tip {
+  border-top-color: rgba(0, 0, 0, 0.7); /* Popup triangle color */
 }
 
-.search-history li {
-  font-size: 16px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 10px;
-  padding: 8px;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-/* Hover effect for each item in the history */
-.search-history li:hover {
-  background-color: #e1f5e1;
-  transform: translateX(10px);
-  color: #4caf50;
-}
-
-/* Add a subtle animation when the list appears */
-.search-history ul {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Animation keyframes */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Additional map container styles */
+.map-container {
+  max-width: 100%;
+  margin: 20px 0;
 }

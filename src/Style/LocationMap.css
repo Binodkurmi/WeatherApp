@@ -1,5 +1,3 @@
-/* LocationMap.css */
-
 /* Styling the Map Container */
 .leaflet-container {
   border-radius: 10px; /* Rounded corners for the map */
@@ -30,4 +28,29 @@
 .map-container {
   max-width: 100%;
   margin: 20px 0;
+}
+
+/* Positioning Search History on the Right Side */
+.history-card {
+  position: absolute;
+  top: 20%;
+  right: 5%;  /* Move the history card to the right corner */
+  width: 25%;
+  max-height: 60%;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 1;
+}
+
+/* Responsive Styles for Small Screens */
+@media (max-width: 768px) {
+  .history-card {
+    top: 5%;
+    right: 5%;
+    width: 90%;
+    max-height: 50%;
+  }
 }

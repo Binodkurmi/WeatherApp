@@ -1,29 +1,23 @@
 /* WeatherDisplay.css */
 
-/* General Styles for Weather Display */
+/* Container for centering the WeatherDisplay */
+.weather-display-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  min-height: 100vh; /* Full viewport height */
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Light background */
+}
+
+/* Weather Display Styling */
 .weather-display {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   padding: 20px;
   max-width: 400px;
-  margin: 20px auto;
-  text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
   animation: fadeIn 1s ease-out;
-}
-
-/* Animation for fade-in effect */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Header Styling */
@@ -32,59 +26,39 @@
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;
-  text-transform: capitalize;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 1px;
 }
 
-/* Styling for Weather Icon */
-.weather-icon {
+/* Weather Icon */
+.weather-display img {
   width: 80px;
   height: 80px;
   margin: 10px auto;
 }
 
-/* Paragraph Styling */
+/* Text Styling */
 .weather-display p {
   font-size: 18px;
   color: #555;
   margin: 10px 0;
-  font-family: 'Arial', sans-serif;
-  transition: color 0.3s ease;
 }
 
-/* Change color of the temperature and condition */
-.weather-display p:nth-child(2) {
-  font-size: 22px;
-  color: #ff6f61;
-  font-weight: bold;
-}
-
-/* Add a hover effect on the Weather Display container */
-.weather-display:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transform: translateY(-5px);
-  transition: all 0.3s ease-in-out;
-}
-
-/* Weather Icon hover effect */
-.weather-display:hover .weather-icon {
-  transform: rotate(360deg);
-  transition: all 0.5s ease;
-}
-
-/* Styling for the description */
-.weather-display p:last-child {
-  font-style: italic;
-  color: #777;
-  font-size: 16px;
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
   .weather-display {
     padding: 15px;
-    max-width: 95%;
+    max-width: 90%;
   }
 
   .weather-display h2 {
