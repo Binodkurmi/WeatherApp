@@ -20,6 +20,9 @@ Interactive Map: Highlights the searched location using geographical coordinates
 User-Friendly Interface: Built with React and styled for accessibility and aesthetics.
 
 
+OUTPUT OF TASK
+![Image](https://github.com/user-attachments/assets/b75c02a5-f9dd-4ff3-b932-3006ecc652e5)
+![Image](https://github.com/user-attachments/assets/dcaabdc1-931d-4544-a6c9-6c3b4ebd1046)
 
 
 
