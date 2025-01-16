@@ -2,20 +2,23 @@ import React from 'react';
 import '../Style/ForecastDisplay.css';
 
 const ForecastDisplay = ({ forecastData }) => {
-  if (!forecastData) {
-    return null; // Return nothing if there's no forecast data
+  if (!forecastData || forecastData.length === 0) {
+    return <p>No forecast data available.</p>;
   }
 
-  // Get unique dates and filter the first entry for each day (3 days)
+  // Create a set to keep track of the unique dates
   const uniqueDays = [];
   const filteredForecast = forecastData.filter((forecast) => {
+    // Extract date from forecast timestamp
     const forecastDate = new Date(forecast.dt_txt).toLocaleDateString();
+
+    // If this date hasn't been added yet, add it to uniqueDays and keep this entry
     if (!uniqueDays.includes(forecastDate)) {
       uniqueDays.push(forecastDate);
-      return true;
+      return true; // Include this forecast in the filtered list
     }
-    return false;
-  }).slice(0, 3); // Limit to 3 days
+    return false; // Exclude this forecast if the date is already included
+  }).slice(0, 3); // Limit the forecast to 3 days
 
   return (
     <div className="forecast-inline-card">

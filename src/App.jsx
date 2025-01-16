@@ -39,25 +39,38 @@ const App = () => {
   };
 
   // Fetch weather forecast data from the API
-  const fetchForecast = async (city) => {
-    const API_KEY = import.meta.env.VITE_API_KEY;
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+ // Fetch weather forecast data from the API
+const fetchForecast = async (city) => {
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
 
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`Error fetching forecast: ${response.statusText}`);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Error fetching forecast: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    // Filter the forecast data to include only the next 3 days
+    const uniqueDays = [];
+    const nextThreeDays = data.list.filter((forecast) => {
+      const forecastDate = new Date(forecast.dt_txt).toLocaleDateString();
+
+      if (!uniqueDays.includes(forecastDate)) {
+        uniqueDays.push(forecastDate);
+        return true; // Include the first forecast for each unique day
       }
 
-      const data = await response.json();
+      return false; // Exclude any additional forecasts for the same day
+    }).slice(0, 3); // Limit to 3 days
 
-      // Filter the forecast data to include only the next 3 days
-      const nextThreeDays = data.list.slice(0, 3); // Getting the first three forecast data entries
-      setForecastData(nextThreeDays);  // Update the state with the filtered data
-    } catch (err) {
-      console.error(err);
-    }
-  };
+    setForecastData(nextThreeDays); // Update the state with the filtered data
+  } catch (err) {
+    console.error('Error fetching forecast:', err);
+  }
+};
+
 
   return (
     <div className="app">
